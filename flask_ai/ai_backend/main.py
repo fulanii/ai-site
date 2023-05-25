@@ -15,4 +15,3 @@ def ask_open_ai(message):
     )
     answer = data["choices"][0]["text"]
     return answer
-
