@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="chat-container">
+
+  <div class="card flex-grow-1">
+    <div class="card-header bg-primary text-white">Chat</div>
+    <div class="card-body messages-box">
+      
+      {% if answer%}
+        <ul class="list-unstyled messages-list">
+
+          <li class="message sent">
+            <div class="message-text">
+              <div class="message-sender">
+                <b>You</b>
+              </div>
+              <div class="message-content">
+                {{ user_chat }}
+              </div>
+            </div>
+          </li>
+
+          <li class="message received">
+            <div class="message-text">
+              <div class="message-sender">
+                <b>AI Chatbot</b>
+              </div>
+              <div class="message-content">
+                {{ answer }}
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      {% endif %}
+      
+    </div>
+
+  </div>
+
+  <form class="message-form" action="/chat" method="POST">
+    <div class="input-group">
+
+      <input type="text" name="user_chat" placeholder="Type your message..." class="form-control message-input">
+
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary btn-send"> Send</button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

@@ -2,8 +2,8 @@
 
 
 
-from flask_ai  import app 
-
+from flask_ai  import app
+from flask_ai import ai_backend
 
 
 
